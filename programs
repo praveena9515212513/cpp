@@ -85,3 +85,22 @@ int main(){
         cout<<a[i]<<" ";
     }
 }
+
+
+#include<iostream>
+#include<stack>
+#include<string>
+#include<cstring>
+using namespace std;
+int main()
+{
+    stack<char> s;
+    char strg[]="ABCD";
+    for(int i=0;i<strlen(strg);i++){
+        s.push(strg[i]);
+    }
+    while(!s.empty()){
+        cout<<s.top();
+        s.pop();
+    }
+}
