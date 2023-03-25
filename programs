@@ -1,0 +1,87 @@
+#include<iostream>
+#include<string>
+using namespace std;
+int main()
+{
+    string s1="Praveena ";
+    string s2="Bhimani";
+    string s3=s1+s2;
+    cout<<s3<<endl;
+    // cout<<s1<s2;
+}
+
+
+#include<stdio.h>
+#include<stdlib.h>
+int compare(const void * a,const void * b){
+    return (*(int*)a < *(int*)b);//desending
+    return (*(int*)a > *(int*)b);//acending
+}
+int main()
+{
+    int a[]={3,-10,5,2,7,10};
+    qsort(a,6,sizeof(int),compare);
+    for(int i=0;i<6;i++){
+        printf("%d ",a[i]);
+    }
+}
+
+
+#include<iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+int compare(int i,int j){
+    return(i>j);
+}
+int main()
+{
+    // vector<int>a(5);
+    int a[]={1,4,0,-1,5};
+    sort(a,a+5);//ascending
+    for(int i=0;i<5;i++){
+        cout<<a[i]<<endl;
+    }
+    cout<<"hehe"<<endl;
+    int b[]={4,9,7,0,16};
+    sort(b,b+5,compare);//desending
+    for(int i=0;i<5;i++){
+        cout<<b[i]<<endl;
+    }
+}
+
+
+#include<iostream>
+#include<algorithm>
+using namespace std;
+int main()
+{
+    int a[]={1,2,3,4,5};
+    int k=4,l=6;//numbers to be found
+    if(binary_search(a,a+5,k)){
+        cout<<k<<"is Found"<<endl;
+    }
+    else
+    cout<<k<<" not found"<<endl;
+    if(binary_search(a,a+5,l)){
+        cout<<l<<" is Found"<<endl;
+    }
+    cout<<l<<" not found"<<endl;
+}
+
+
+#include<iostream>
+#include<algorithm>
+int compare(int a,int b){
+    return a>b;
+}
+using namespace std;
+int main(){
+    int a[]={1,2,3,4,5};
+    replace(a,a+5,5,0);
+    // sort(a,a+5);
+    sort(a,a+5,compare);
+    for(int i=0;i<5;i++){
+        cout<<a[i]<<" ";
+    }
+}
