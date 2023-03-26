@@ -133,3 +133,71 @@ int main()
     }
     cout<<"Answer is "<<n.top();
 }
+
+
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a=10;
+    int &b=a;//a and b has same memory location
+    cout<<"a="<<a<<" b="<<b<<endl;
+    ++a;
+    cout<<"a="<<a<<" b="<<b<<endl;
+    ++b;
+    cout<<"a="<<a<<" b="<<b<<endl;
+}
+
+
+#include<iostream>
+using namespace std;
+void function(int &b//call by reference
+,int c//call by value
+){
+    cout<<b<<" "<<&b<<endl;
+    cout<<c<<" "<<&c<<endl;
+}
+int main()
+{
+    int a=5;
+    cout<<a<<" "<<&a<<endl;
+    function(a,a);
+
+}
+
+
+#include<iostream>
+using namespace std;
+void swap(int &a,int &b){
+    int t=a;
+    a=b;b=t;
+}
+int main()
+{
+    int a=5,b=10;
+    cout<<"Before swap a="<<a<<" b="<<b<<endl;
+    swap(a,b);
+    cout<<"After swap a="<<a<<" b="<<b<<endl;
+}
+
+
+#include<iostream>
+using namespace std;
+int Return(int &b){//return by value
+    cout<<b<<" "<<&b<<endl;
+    return b;
+}
+int& Refreturn(int &b){
+    cout<<b<<" "<<&b<<endl;
+    return b;
+}
+int main()
+{
+    int a=10;
+    cout<<a<<" "<<&a<<endl;
+    const int &b=Return(a);
+    cout<<b<<" "<<&b<<endl;
+    //return by reference
+    const int &c=Refreturn(a);
+    cout<<c<<" "<<&c<<endl;
+}
