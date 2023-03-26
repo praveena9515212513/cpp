@@ -201,3 +201,26 @@ int main()
     const int &c=Refreturn(a);
     cout<<c<<" "<<&c<<endl;
 }
+
+
+#include<iostream>
+#include<cstdlib>
+using namespace std;
+int main()
+{
+    int *p=(int *)malloc(sizeof(int));
+    *p=5;
+    cout<<*p;
+    free(p);
+    int *q=new int(5);//int *q=(int *) operator new(sizeof(int));
+    cout<<endl<<*q;
+    delete q;//operator delete();
+
+    // array
+    int *a=new int[3];
+    a[0]=1;a[1]=2;a[2]=3;
+    for(int i=0;i<3;i++){
+        cout<<endl<<a[i];
+    }
+    delete [] a;
+}
